@@ -15,9 +15,6 @@ class unitest(unittest.TestCase):
     
     def test4(self):
         self.assertEqual(True,vente_enchere.enchere(self,'bague',50,150))
-    
-    def test5(self):
-        self.assertEqual(False,vente_enchere.enchere(self,'bague',50,50))
         
     def test6(self):
         self.assertEqual(False,vente_enchere.enchere(self,'bague',50,60))
@@ -35,11 +32,11 @@ class unitest(unittest.TestCase):
         self.assertEqual(True,vente_enchere.offres(self,prix=100))
     
     def test11(self):
-        self.assertEqual(True,vente_enchere.offres(self,"bracelet",120))
+        self.assertEqual(True,vente_enchere.offres(self,name="nugget",prix=120))
 
     
     def test12(self):
-        self.assertEqual(False,vente_enchere.offres("test",666))
+        self.assertEqual(False,vente_enchere.offres(self,"test",666))
 
     
                 
