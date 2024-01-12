@@ -14,9 +14,12 @@ class vente_enchere:
         lstoffre = {"bague or":100,"bracelet":120}
 
         if name in lstoffre.keys() or prix in lstoffre.values():
-            return True
-        else :
-            return False
+            return "name and prix"
+        elif name in lstoffre.keys() :
+            return "only name"
+        elif prix in lstoffre.values():
+            return "prix only"
+
         
     
 
