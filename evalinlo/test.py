@@ -4,41 +4,43 @@ import unittest
 
 class unitest(unittest.TestCase):
     
-    def test1(self):
+    def test1diffprixenchereproduit(self):
         self.assertEqual(True,vente_enchere.enchere(self,'bague',50,100))
         
-    def test2(self):
-        self.assertEqual(False,vente_enchere.enchere(self,'bague',40,12))
+    def test2diffprixenchereproduitmoin(self):
+        self.assertEqual(False,vente_enchere.enchere(self,'bague',50,40))
         
-    def test3(self):
-        self.assertEqual(False,vente_enchere.enchere(self,'bague',50,50))
-    
-    def test4(self):
-        self.assertEqual(True,vente_enchere.enchere(self,'bague',50,150))
+    def test3multiple10(self):
+        self.assertEqual(False,vente_enchere.enchere(self,'bague',40,56))
         
-    def test6(self):
+    def test4multiple10true(self):
+        self.assertEqual(False,vente_enchere.enchere(self,'bague',40,50))
+        
+    def test5plupourcentenchere(self):
+        self.assertEqual(False,vente_enchere.enchere(self,'bague',50,70))
+        
+    def test6moinpourcentenchere(self):
         self.assertEqual(False,vente_enchere.enchere(self,'bague',50,60))
         
-    def test7(self):
+    def test7plu100poucent(self):
         self.assertEqual(True,vente_enchere.enchere(self,'bague',50,150,200))
         
-    def test8(self):
+    def test8moin100pourcent(self):
         self.assertEqual(False,vente_enchere.enchere(self,'bague',50,100,200))
-
+        
     def test9(self):
-        self.assertEqual(True,vente_enchere.offres(self,name="bague or"))
+        self.assertEqual("name only",vente_enchere.offres(self,name="bague or"))
 
     def test10(self):
-        self.assertEqual(True,vente_enchere.offres(self,prix=100))
-    
-    def test11(self):
-        self.assertEqual(True,vente_enchere.offres(self,name="nugget",prix=120))
-
+        self.assertEqual("prix only",vente_enchere.offres(self,prix=100))
     
     def test12(self):
-        self.assertEqual(False,vente_enchere.offres(self,"test",666))
+        self.assertEqual("name prix",vente_enchere.offres(self,name="bague or",prix=100))
 
-    
+    def test13(self):
+        self.assertEqual(False,vente_enchere.offres(self,"test",666))
+            
+
                 
 if __name__ == '__main__':
     unittest.main()
