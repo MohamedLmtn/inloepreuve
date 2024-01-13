@@ -12,13 +12,13 @@ class vente_enchere:
 
     def offres(self,name : str = None,prix : int = None):
         lstoffre = {"bague or":100,"bracelet":120}
-
+        
         if name in lstoffre.keys() or prix in lstoffre.values():
             return "name and prix"
         elif name in lstoffre.keys() :
-            return "only name"
+            return "name"
         elif prix in lstoffre.values():
-            return "prix only"
+            return "prix"
 
         
     
